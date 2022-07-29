@@ -78,7 +78,8 @@ def get_gateway_recs(rec, source):
         }
 
         gtw_recs.append(r)
-        return gtw_recs
+
+    return gtw_recs
 
 def get_payload_rec(rec, source):
 
