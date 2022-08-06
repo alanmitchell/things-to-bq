@@ -1,0 +1,5 @@
+#!/bin/sh
+gcloud functions deploy store-bq --entry-point=store_in_bq \
+--runtime python310 --trigger-http --allow-unauthenticated \
+--region=us-west1 --gen2 \
+--set-secrets 'API_KEYS=diagnostic-api-keys:latest'

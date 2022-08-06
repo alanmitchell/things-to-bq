@@ -71,9 +71,9 @@ def get_gateway_recs(rec, source):
             'source': source,
             'device': rec['end_device_ids']['device_id'],
             'gateway': gtw['gateway_ids']['gateway_id'],
-            'counter': rec['uplink_message']['f_cnt'],
-            'snr': gtw['snr'],
-            'rssi': gtw['rssi'],
+            'counter': rec['uplink_message']['f_cnt'] if 'f_cnt' in rec['uplink_message'] else None,
+            'snr': gtw['snr'] if 'snr' in gtw else None,
+            'rssi': gtw['rssi'] if 'rssi' in gtw else None,
             'data_rate': data_rate,
         }
 
